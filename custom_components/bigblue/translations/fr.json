@@ -1,0 +1,115 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration Big Blue",
+        "description": "Configurez votre intégration Big Blue",
+        "data": {
+          "email": "Email",
+          "password": "Mot de passe"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter à l'API Big Blue",
+      "invalid_auth": "Authentification invalide",
+      "unknown": "Erreur inconnue"
+    },
+    "abort": {
+      "already_configured": "Cette intégration est déjà configurée"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Big Blue",
+        "data": {
+          "update_interval": "Intervalle de mise à jour (secondes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "soc": {
+        "name": "État de charge"
+      },
+      "soh": {
+        "name": "État de santé"
+      },
+      "total_power": {
+        "name": "Puissance totale"
+      },
+      "total_voltage": {
+        "name": "Tension totale"
+      },
+      "total_current": {
+        "name": "Courant total"
+      },
+      "pv_total_power": {
+        "name": "Puissance PV totale"
+      },
+      "pv1_power": {
+        "name": "Puissance PV1"
+      },
+      "pv2_power": {
+        "name": "Puissance PV2"
+      },
+      "pv1_voltage": {
+        "name": "Tension PV1"
+      },
+      "pv2_voltage": {
+        "name": "Tension PV2"
+      },
+      "pv1_current": {
+        "name": "Courant PV1"
+      },
+      "pv2_current": {
+        "name": "Courant PV2"
+      },
+      "daily_generation": {
+        "name": "Génération quotidienne"
+      },
+      "total_generation": {
+        "name": "Génération totale"
+      },
+      "daily_output_energy": {
+        "name": "Énergie de sortie quotidienne"
+      },
+      "total_output_energy": {
+        "name": "Énergie de sortie totale"
+      },
+      "max_temperature": {
+        "name": "Température maximale"
+      },
+      "min_temperature": {
+        "name": "Température minimale"
+      },
+      "daily_runtime": {
+        "name": "Temps de fonctionnement quotidien"
+      },
+      "total_runtime": {
+        "name": "Temps de fonctionnement total"
+      },
+      "current_mode": {
+        "name": "Mode actuel"
+      }
+    },
+    "number": {
+      "discharge_threshold": {
+        "name": "Seuil de décharge"
+      }
+    },
+    "switch": {
+      "mode1": {
+        "name": "Mode 1 - Priorité batterie"
+      },
+      "mode2": {
+        "name": "Mode 2 - Priorité micro-onduleur"
+      },
+      "mode3": {
+        "name": "Mode 3 - Mode personnalisé"
+      }
+    }
+  }
+}

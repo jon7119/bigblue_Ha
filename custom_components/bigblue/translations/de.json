@@ -1,0 +1,115 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Big Blue Konfiguration",
+        "description": "Konfigurieren Sie Ihre Big Blue Integration",
+        "data": {
+          "email": "E-Mail",
+          "password": "Passwort"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Big Blue API nicht möglich",
+      "invalid_auth": "Ungültige Authentifizierung",
+      "unknown": "Unbekannter Fehler"
+    },
+    "abort": {
+      "already_configured": "Diese Integration ist bereits konfiguriert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Big Blue Optionen",
+        "data": {
+          "update_interval": "Aktualisierungsintervall (Sekunden)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "soc": {
+        "name": "Ladezustand"
+      },
+      "soh": {
+        "name": "Gesundheitszustand"
+      },
+      "total_power": {
+        "name": "Gesamtleistung"
+      },
+      "total_voltage": {
+        "name": "Gesamtspannung"
+      },
+      "total_current": {
+        "name": "Gesamtstrom"
+      },
+      "pv_total_power": {
+        "name": "Gesamte PV-Leistung"
+      },
+      "pv1_power": {
+        "name": "PV1 Leistung"
+      },
+      "pv2_power": {
+        "name": "PV2 Leistung"
+      },
+      "pv1_voltage": {
+        "name": "PV1 Spannung"
+      },
+      "pv2_voltage": {
+        "name": "PV2 Spannung"
+      },
+      "pv1_current": {
+        "name": "PV1 Strom"
+      },
+      "pv2_current": {
+        "name": "PV2 Strom"
+      },
+      "daily_generation": {
+        "name": "Tägliche Erzeugung"
+      },
+      "total_generation": {
+        "name": "Gesamterzeugung"
+      },
+      "daily_output_energy": {
+        "name": "Tägliche Ausgangsenergie"
+      },
+      "total_output_energy": {
+        "name": "Gesamte Ausgangsenergie"
+      },
+      "max_temperature": {
+        "name": "Maximale Temperatur"
+      },
+      "min_temperature": {
+        "name": "Minimale Temperatur"
+      },
+      "daily_runtime": {
+        "name": "Tägliche Laufzeit"
+      },
+      "total_runtime": {
+        "name": "Gesamtlaufzeit"
+      },
+      "current_mode": {
+        "name": "Aktueller Modus"
+      }
+    },
+    "number": {
+      "discharge_threshold": {
+        "name": "Entladeschwelle"
+      }
+    },
+    "switch": {
+      "mode1": {
+        "name": "Modus 1 - Batterie-Priorität"
+      },
+      "mode2": {
+        "name": "Modus 2 - Mikro-Wechselrichter-Priorität"
+      },
+      "mode3": {
+        "name": "Modus 3 - Benutzerdefinierter Modus"
+      }
+    }
+  }
+}
