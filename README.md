@@ -1,3 +1,4 @@
+![](/custom_components/bigblue_Ha/icons/bigblue_Ha.jpg)
 # Big Blue Integration for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
@@ -158,5 +159,6 @@ Pour obtenir de l'aide :
 - [ ] Support de nouvelles langues
 
 ---
+
 
 **Développé avec ❤️ pour la communauté Big Blue**
