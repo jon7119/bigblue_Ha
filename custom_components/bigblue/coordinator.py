@@ -9,9 +9,17 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import DOMAIN, API_BASE_URL, API_TIMEOUT
-from .local_api import BigBlueLocalAPIClient
 
 _LOGGER = logging.getLogger(__name__)
+
+# Import optionnel de l'API locale
+try:
+    from .local_api import BigBlueLocalAPIClient
+    LOCAL_API_AVAILABLE = True
+except ImportError:
+    _LOGGER.warning("⚠️ Module local_api non disponible - L'API locale ne sera pas utilisée")
+    BigBlueLocalAPIClient = None
+    LOCAL_API_AVAILABLE = False
 
 
 class BigBlueDataUpdateCoordinator(DataUpdateCoordinator):
@@ -81,7 +89,12 @@ class BigBlueDataUpdateCoordinator(DataUpdateCoordinator):
                 # Gérer la préférence API
                 if self.api_preference == "local":
                     # Forcer l'utilisation de l'API locale uniquement
-                    if local_ip and local_ip != "Non disponible" and local_ip.strip():
+                    if not LOCAL_API_AVAILABLE:
+                        _LOGGER.warning("⚠️ API locale demandée mais module non disponible, utilisation du cloud")
+                        data = await self.api_client.get_device_data_for_mac(device_mac)
+                        if data:
+                            data_source = "cloud"
+                    elif local_ip and local_ip != "Non disponible" and local_ip.strip():
                         _LOGGER.info(f"🔍 Utilisation forcée de l'API locale sur {local_ip}...")
                         try:
                             local_client = BigBlueLocalAPIClient(local_ip)
@@ -110,7 +123,7 @@ class BigBlueDataUpdateCoordinator(DataUpdateCoordinator):
                 
                 else:  # "auto" - Essayer local puis cloud
                     # Si on a une IP locale, essayer l'API locale
-                    if local_ip and local_ip != "Non disponible" and local_ip.strip():
+                    if LOCAL_API_AVAILABLE and local_ip and local_ip != "Non disponible" and local_ip.strip():
                         _LOGGER.info(f"🔍 Tentative de connexion à l'API locale sur {local_ip}...")
                         try:
                             local_client = BigBlueLocalAPIClient(local_ip)
